@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipes_app/pages/login_page.dart';
+import './pages/home_page.dart';
 
 void main() {
   runApp(myApp());
@@ -13,7 +14,7 @@ class myApp extends StatelessWidget {
       title: 'Recipe book',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 15, 248, 229)),
         appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
             color: Colors.black, 
@@ -22,7 +23,11 @@ class myApp extends StatelessWidget {
           )
         )
       ),
-      home: LoginPage(),
+      initialRoute: "/login",
+      routes: {
+        "/login": (context) => LoginPage(),
+        "/home": (context) => HomePage(),
+      }
     );
   }
 
